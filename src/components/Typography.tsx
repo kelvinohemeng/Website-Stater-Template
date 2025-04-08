@@ -42,8 +42,8 @@ const variantMapping: Record<TypographyVariant, React.ElementType> = {
   h4: "h4",
   h5: "h5",
   h6: "h6",
-  subtitle1: "h6",
-  subtitle2: "h6",
+  subtitle1: "p",
+  subtitle2: "p",
   body1: "p",
   body2: "p",
   caption: "span",
@@ -52,16 +52,16 @@ const variantMapping: Record<TypographyVariant, React.ElementType> = {
 
 // ** Variant Styles Values
 const variantStyles: Record<TypographyVariant, string> = {
-  h1: "text-4xl font-bold",
-  h2: "text-3xl font-bold",
-  h3: "text-2xl font-bold",
-  h4: "text-xl font-semibold",
-  h5: "text-lg font-semibold",
-  h6: "text-base font-semibold",
-  subtitle1: "text-lg font-medium",
-  subtitle2: "text-base font-medium",
-  body1: "text-base",
-  body2: "text-sm",
+  h1: "",
+  h2: "",
+  h3: "",
+  h4: "",
+  h5: "",
+  h6: "",
+  subtitle1: "text-e-4xl font-medium",
+  subtitle2: "text-e-3xl font-medium",
+  body1: " text-e-2xl",
+  body2: " text-e-base",
   caption: "text-xs",
   overline: "text-xs uppercase tracking-wider",
 };
@@ -99,13 +99,12 @@ export const Typography = ({
   const Component = component || variantMapping[variant];
 
   const classes = twMerge(
-    variantStyles[variant],
     colorStyles[color],
     alignStyles[align],
+    variantStyles[variant],
     gutterBottom && "mb-4",
     noWrap && "whitespace-nowrap overflow-hidden text-ellipsis",
-    className,
-    "font-display"
+    className
   );
 
   return (
