@@ -3,7 +3,7 @@ import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
-    <nav className="fixed">
+    <nav>
       <NavLink to="/" end>
         Home
       </NavLink>
